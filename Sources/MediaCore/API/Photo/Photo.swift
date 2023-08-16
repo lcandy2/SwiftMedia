@@ -311,3 +311,15 @@ public extension Photo {
         return photo
     }
 }
+
+// by lcandy2
+
+public extension Photo {
+    func toLivePhoto() -> LivePhoto? {
+        guard let phAsset = phAsset, phAsset.mediaSubtypes.contains(.photoLive) else {
+            return nil
+        }
+        return LivePhoto(phAsset: phAsset)
+    }
+}
+
