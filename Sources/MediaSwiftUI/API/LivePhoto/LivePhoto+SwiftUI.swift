@@ -145,6 +145,12 @@ public extension LivePhoto {
     ///
     /// - Parameter size: the desired size of the `LivePhoto`
     ///
+    
+    func view() -> some View {
+        let targetSize = CGSize(width: self.phAsset?.pixelWidth ?? 1920, height: self.phAsset?.pixelHeight ?? 1080)
+        return LivePhotoView(livePhoto: self, size: targetSize)
+    }
+    
     func view(size: CGSize) -> some View {
         LivePhotoView(livePhoto: self, size: size)
     }

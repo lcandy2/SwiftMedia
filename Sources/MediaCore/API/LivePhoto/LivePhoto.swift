@@ -16,7 +16,7 @@ public struct LivePhoto: MediaProtocol {
 
     static var livePhotoManager: LivePhotoManager = PHImageManager.default()
 
-    private var phAsset: PHAsset? { phAssetWrapper.value }
+    public var phAsset: PHAsset? { phAssetWrapper.value }
 
     public typealias MediaSubtype = LivePhoto.Subtype
     public typealias MediaFileType = LivePhoto.FileType
